@@ -15,12 +15,15 @@ var hour3El = $("#hour-3");
 var hour4El = $("#hour-4");
 
 //Write functions that identify the description and the key name in relation to the id and send that to local storage
+console.log(hour9El.children().eq(2));
 
-$(hour9El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour9", inputDescription.val()); 
+$(".saveBtn").click(function(){
+  console.log("Click");
+  // var inputDescription = $(this).siblings(".description");
+  //   inputDescription.val();
+  // var parentEl = $(this).parents(".time-block");
+  // localStorage.setItem("hour9", inputDescription.val()); 
+  // inputDescription.textContent = inputDescription.val();
 });
 
 $(hour10El.children().eq(2)).click(function(){
@@ -28,6 +31,7 @@ $(hour10El.children().eq(2)).click(function(){
     inputDescription.val();
   var parentEl = $(this).parents(".time-block");
   localStorage.setItem("hour10", inputDescription.val()); 
+  inputDescription.textContent = inputDescription.val();
 });
 
 $(hour11El.children().eq(2)).click(function(){
@@ -35,13 +39,15 @@ $(hour11El.children().eq(2)).click(function(){
     inputDescription.val();
   var parentEl = $(this).parents(".time-block");
   localStorage.setItem("hour11", inputDescription.val()); 
+  inputDescription.textContent = inputDescription.val();
 });
 
 $(hour12El.children().eq(2)).click(function(){
   var inputDescription = $(this).siblings(".description");
     inputDescription.val();
   var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour12", inputDescription.val()); 
+  localStorage.setItem("hour12", inputDescription.val());
+  inputDescription.textContent = inputDescription.val(); 
 });
 
 $(hour1El.children().eq(2)).click(function(){
@@ -49,6 +55,7 @@ $(hour1El.children().eq(2)).click(function(){
     inputDescription.val();
   var parentEl = $(this).parents(".time-block");
   localStorage.setItem("hour1", inputDescription.val()); 
+  inputDescription.textContent = inputDescription.val();
 });
 
 $(hour2El.children().eq(2)).click(function(){
@@ -56,13 +63,15 @@ $(hour2El.children().eq(2)).click(function(){
     inputDescription.val();
   var parentEl = $(this).parents(".time-block");
   localStorage.setItem("hour2", inputDescription.val()); 
+  inputDescription.textContent = inputDescription.val();
 });
 
 $(hour3El.children().eq(2)).click(function(){
   var inputDescription = $(this).siblings(".description");
     inputDescription.val();
   var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour3", inputDescription.val()); 
+  localStorage.setItem("hour3", inputDescription.val());
+  inputDescription.textContent = inputDescription.val(); 
 });
 
 $(hour4El.children().eq(2)).click(function(){
@@ -70,8 +79,49 @@ $(hour4El.children().eq(2)).click(function(){
     inputDescription.val();
   var parentEl = $(this).parents(".time-block");
   localStorage.setItem("hour4", inputDescription.val()); 
+  inputDescription.textContent = inputDescription.val();
 });
 
+// var returnedHour9;
+// var returnedHour10;
+// var returnedHour11;
+// var returnedHour12;
+// var returnedHour1; 
+// var returnedHour2; 
+// var returnedHour3; 
+// var returnedHour4;
+
+// //retrieve from storage
+// function renderLastTimeInput() {
+//     returnedHour9 = localStorage.getItem("hour9");
+//     returnedHour10 = localStorage.getItem("hour10");
+//     returnedHour11 = localStorage.getItem("hour11");
+//     returnedHour12 = localStorage.getItem("hour12");
+//     returnedHour1 = localStorage.getItem("hour1");
+//     returnedHour2 = localStorage.getItem("hour2");
+//     returnedHour3 = localStorage.getItem("hour3");
+//     returnedHour4 = localStorage.getItem("hour4");
+
+//     hour9El.textContent = returnedHour9;
+//     hour10El.textContent = returnedHour10;
+//     hour11El.textContent = returnedHour11;
+//     hour12El.textContent = returnedHour12;
+//     hour1El.textContent = returnedHour1;
+//     hour2El.textContent = returnedHour2;
+//     hour3El.textContent = returnedHour3;
+//     hour4El.textContent = returnedHour4;
+// }
+
+// renderLastTimeInput();
+
+//retrieve to screen on page load
+// $( document ).ready(function() {
+//   renderLastTimeInput();
+
+// });
+
+
+//
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
