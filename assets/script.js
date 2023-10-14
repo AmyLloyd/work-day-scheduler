@@ -4,6 +4,7 @@ for (var i=9; i<18; i++) {
   $(`#hour-${i} .description`).val(localStorage.getItem(`hour-${i}`)) 
 }
 
+
 //get element by id for each hour container
 // var saveButtonEl = $(".saveBtn");
 // var hour9El = $("#hour-9");
@@ -25,7 +26,7 @@ $(".saveBtn").click(function(){
   localStorage.setItem(time,value);
 });
 
-// From tutor var currentHour = dayjs().hour();
+var currentHour = dayjs().hour();
 
 //Set current day in header
 var today = dayjs();
@@ -34,47 +35,36 @@ $('#currentDay').text(dayWeek);
 $('#currentDay').attr('class', '.hour');
 
 
+//colour-code the time-blocks with past, present future classes
+//loop through time-block divs
 
-
-
-
-// var returnedHour9;
-// var returnedHour10;
-// var returnedHour11;
-// var returnedHour12;
-// var returnedHour1; 
-// var returnedHour2; 
-// var returnedHour3; 
-// var returnedHour4;
-
-// //retrieve from storage
-// function renderLastTimeInput() {
-//     returnedHour9 = localStorage.getItem("hour9");
-//     returnedHour10 = localStorage.getItem("hour10");
-//     returnedHour11 = localStorage.getItem("hour11");
-//     returnedHour12 = localStorage.getItem("hour12");
-//     returnedHour1 = localStorage.getItem("hour1");
-//     returnedHour2 = localStorage.getItem("hour2");
-//     returnedHour3 = localStorage.getItem("hour3");
-//     returnedHour4 = localStorage.getItem("hour4");
-
-//     hour9El.textContent = returnedHour9;
-//     hour10El.textContent = returnedHour10;
-//     hour11El.textContent = returnedHour11;
-//     hour12El.textContent = returnedHour12;
-//     hour1El.textContent = returnedHour1;
-//     hour2El.textContent = returnedHour2;
-//     hour3El.textContent = returnedHour3;
-//     hour4El.textContent = returnedHour4;
+//this loop works to make all time blocks present-classed
+// for (var i = 9; i < 18; i++) {
+//   $(`#hour-${i} .description`).addClass("present");
+//   //$(i === currentHour).attr('.present');
 // }
 
-// renderLastTimeInput();
+for (var i = 9; i < 18; i++) {
+  if (i === currentHour) { 
+     $(`#hour-${i} .description`).addClass("present");
+    } else if 
+    (i < currentHour) {
+      $(`#hour-${i} .description`).addClass("past");
+    } else {
+      $(`#hour-${i} .description`).addClass("future")
+    }
+}
+   
+  //$(i === currentHour).attr('.present');
 
-//retrieve to screen on page load
-// $( document ).ready(function() {
-//   renderLastTimeInput();
 
+//from jquery switchClass
+// $( "div" ).click(function() {
+//   $( this ).switchClass( "big", "blue", 1000, "easeInOutQuad" );
 // });
+
+
+
 
 
 //
