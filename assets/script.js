@@ -2,6 +2,9 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
+for (var i=9; i<18; i++) {
+  $(`#hour-${i} .description`).val(localStorage.getItem(`hour-${i}`)) 
+}
 
 //get element by id for each hour container
 var saveButtonEl = $(".saveBtn");
@@ -17,70 +20,19 @@ var hour4El = $("#hour-4");
 //Write functions that identify the description and the key name in relation to the id and send that to local storage
 console.log(hour9El.children().eq(2));
 
+
+
 $(".saveBtn").click(function(){
   console.log("Click");
-  // var inputDescription = $(this).siblings(".description");
-  //   inputDescription.val();
-  // var parentEl = $(this).parents(".time-block");
-  // localStorage.setItem("hour9", inputDescription.val()); 
-  // inputDescription.textContent = inputDescription.val();
+  var time = $(this).parent().attr("id");
+  var value = $(this).siblings(".description").val();
+  localStorage.setItem(time,value);
 });
 
-$(hour10El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour10", inputDescription.val()); 
-  inputDescription.textContent = inputDescription.val();
-});
+var currentHour = dayjs().hour();
+console.log(currentHour);
 
-$(hour11El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour11", inputDescription.val()); 
-  inputDescription.textContent = inputDescription.val();
-});
 
-$(hour12El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour12", inputDescription.val());
-  inputDescription.textContent = inputDescription.val(); 
-});
-
-$(hour1El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour1", inputDescription.val()); 
-  inputDescription.textContent = inputDescription.val();
-});
-
-$(hour2El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour2", inputDescription.val()); 
-  inputDescription.textContent = inputDescription.val();
-});
-
-$(hour3El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour3", inputDescription.val());
-  inputDescription.textContent = inputDescription.val(); 
-});
-
-$(hour4El.children().eq(2)).click(function(){
-  var inputDescription = $(this).siblings(".description");
-    inputDescription.val();
-  var parentEl = $(this).parents(".time-block");
-  localStorage.setItem("hour4", inputDescription.val()); 
-  inputDescription.textContent = inputDescription.val();
-});
 
 // var returnedHour9;
 // var returnedHour10;
