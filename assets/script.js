@@ -1,25 +1,21 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 
+//Loop to retrieve previous data from localStorage. It will run through every possible hour 
 for (var i=9; i<18; i++) {
   $(`#hour-${i} .description`).val(localStorage.getItem(`hour-${i}`)) 
 }
 
 //get element by id for each hour container
-var saveButtonEl = $(".saveBtn");
-var hour9El = $("#hour-9");
-var hour10El = $("#hour-10");
-var hour11El = $("#hour-11");
-var hour12El = $("#hour-12");
-var hour1El = $("#hour-1");
-var hour2El = $("#hour-2");
-var hour3El = $("#hour-3");
-var hour4El = $("#hour-4");
+// var saveButtonEl = $(".saveBtn");
+// var hour9El = $("#hour-9");
+// var hour10El = $("#hour-10");
+// var hour11El = $("#hour-11");
+// var hour12El = $("#hour-12");
+// var hour1El = $("#hour-1");
+// var hour2El = $("#hour-2");
+// var hour3El = $("#hour-3");
+// var hour4El = $("#hour-4");
 
-//Write functions that identify the description and the key name in relation to the id and send that to local storage
-console.log(hour9El.children().eq(2));
-
+// //Write functions that identify the description and the key name in relation to the id and send that to local storage
 
 
 $(".saveBtn").click(function(){
@@ -29,8 +25,16 @@ $(".saveBtn").click(function(){
   localStorage.setItem(time,value);
 });
 
-var currentHour = dayjs().hour();
-console.log(currentHour);
+// From tutor var currentHour = dayjs().hour();
+
+//Set current day in header
+var today = dayjs();
+var dayWeek = today.format('dddd');
+$('#currentDay').text(dayWeek);
+$('#currentDay').attr('class', '.hour');
+
+
+
 
 
 
